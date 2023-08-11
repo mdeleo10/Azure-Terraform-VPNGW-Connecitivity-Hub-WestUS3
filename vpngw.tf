@@ -82,7 +82,7 @@ terraform {
   # sku = "standard" for non-internal IPSec tunnel
     sku           = "VpnGw2AZ"
  #   sku            = "Standard"
-     availability_zones = ["1"]
+     availability_zones = "1"
     
    
 
