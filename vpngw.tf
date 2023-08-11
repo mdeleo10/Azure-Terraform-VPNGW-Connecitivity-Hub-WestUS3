@@ -92,7 +92,7 @@ terraform {
 
     ip_configuration {
       name                          = "vnetGatewayConfig2"
-      public_ip_address_id          = azurerm_public_ip.pip-gateway_  2.id
+      public_ip_address_id          = azurerm_public_ip.pip-gateway_2.id
       private_ip_address_allocation = "Dynamic"
       subnet_id                     = azurerm_subnet.vpn_gw.id
     }
