@@ -52,7 +52,7 @@ terraform {
   
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
- #   zones             = ["1,2"]
+ #   zones             = ["1","2"]
   }
 
 # Create Public IP 2 for VPN GW
