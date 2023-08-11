@@ -20,9 +20,11 @@ It has the following variables defined in the file variables.rf
 - Remote BGP ASN (default is a private ASN)
 - Remote IPv4 address bgp peering - internal address
 - IPSec Shared Key
+- The active-active is turned on to support redundant tunnels (and gateways)
+- private_ip_address_enabled is set to true, this allows  visiblity the internal IP address to deploy IPSec tunnel over Express Route (or demo vnets)
 
 TBD:
-Guthub is setup for a workflow to to run Actions upon code change (push) and deploy/redploy as needed. 
+Guthub is setup for a workflow to to run Actions upon code change (push) and deploy/redploy as needed. Check your .github/workflows folder to see it if needed
 
 ## Prerequistes:
 
