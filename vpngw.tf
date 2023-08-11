@@ -52,7 +52,7 @@ terraform {
   
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
-    availability_zone   = "Zone-Redundant"
+ #   availability_zone   = "Zone-Redundant"
   }
 
 # Create Public IP 2 for VPN GW
@@ -65,7 +65,7 @@ terraform {
   
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
-    availability_zone   = "Zone-Redundant"
+  #  availability_zone   = "Zone-Redundant"
   }
 
 # Create VPN GW
