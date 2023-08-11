@@ -43,7 +43,7 @@ terraform {
   }
   
 # Create Public IP 1 for VPN GW
-  resource "azurerm_public_ip" "pip-gateway_zone_redundant-1" {
+  resource "azurerm_public_ip" "pip-gateway_1" {
     name                = "pip-1-vpn-gw-${azurerm_resource_group.rg.location}"
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
@@ -52,11 +52,11 @@ terraform {
   
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
- #   availability_zone   = "Zone-Redundant"
+    availability_zone   = "Zone-redundant"
   }
 
 # Create Public IP 2 for VPN GW
-  resource "azurerm_public_ip" "pip-gateway_zone_redundant-2" {
+  resource "azurerm_public_ip" "pip-gateway_2" {
     name                = "pip-2-vpn-gw-${azurerm_resource_group.rg.location}"
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
@@ -65,7 +65,7 @@ terraform {
   
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
-  #  availability_zone   = "Zone-Redundant"
+    availability_zone   = "Zone-redundant"
   }
 
 # Create VPN GW
@@ -85,14 +85,14 @@ terraform {
 
     ip_configuration {
       name                          = "vnetGatewayConfig"
-      public_ip_address_id          = azurerm_public_ip.pip-gateway_zone_redundant-1.id
+      public_ip_address_id          = azurerm_public_ip.pip-gateway_1.id
       private_ip_address_allocation = "Dynamic"
       subnet_id                     = azurerm_subnet.vpn_gw.id
     }
 
     ip_configuration {
       name                          = "vnetGatewayConfig2"
-      public_ip_address_id          = azurerm_public_ip.pip-gateway_zone_redundant-2.id
+      public_ip_address_id          = azurerm_public_ip.pip-gateway_  2.id
       private_ip_address_allocation = "Dynamic"
       subnet_id                     = azurerm_subnet.vpn_gw.id
     }
