@@ -82,7 +82,7 @@ terraform {
   # sku = "standard" for non-internal IPSec tunnel
     sku           = "VpnGw2AZ"
  #   sku            = "Standard"
-    zones           = ["1"]
+    availability_zone = "1"
 
     ip_configuration {
       name                          = "vnetGatewayConfig"
