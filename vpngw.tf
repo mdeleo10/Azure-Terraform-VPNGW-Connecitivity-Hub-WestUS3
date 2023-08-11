@@ -42,9 +42,9 @@ terraform {
     address_prefixes     = ["${var.vpn_gw_GatewaySubnet_address}"]
   }
   
-# Create Public IP for VPN GW
-  resource "azurerm_public_ip" "vpn_gw" {
-    name                = "pip-vpn-gw-${azurerm_resource_group.rg.location}"
+# Create Public IP 1 for VPN GW
+  resource "azurerm_public_ip1" "vpn_gw" {
+    name                = "pip-2-vpn-gw-${azurerm_resource_group.rg.location}"
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
 #    allocation_method = "Dynamic"
@@ -52,9 +52,23 @@ terraform {
   
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
+    availability_zone   = "Zone-Redundant"
   }
 
+# Create Public IP 2 for VPN GW
+  resource "azurerm_public_ip2" "vpn_gw" {
+    name                = "pip-1-vpn-gw-${azurerm_resource_group.rg.location}"
+    location            = azurerm_resource_group.rg.location
+    resource_group_name = azurerm_resource_group.rg.name
+#    allocation_method = "Dynamic"
+    allocation_method = "Static"
   
+    # Standard SKU for Internal IPSec tunnel
+    sku               = "Standard"
+    availability_zone   = "Zone-Redundant"
+  }
+
+
 # Create VPN GW
   resource "azurerm_virtual_network_gateway" "vpn_gw" {
     name                = "vpn-gw-${var.resource_group_location}"
@@ -72,10 +86,19 @@ terraform {
 
     ip_configuration {
       name                          = "vnetGatewayConfig"
-      public_ip_address_id          = azurerm_public_ip.vpn_gw.id
+      public_ip_address_id          = azurerm_public_ip1.vpn_gw.id
       private_ip_address_allocation = "Dynamic"
       subnet_id                     = azurerm_subnet.vpn_gw.id
     }
+
+    ip_configuration {
+      name                          = "vnetGatewayConfig"
+      public_ip_address_id          = azurerm_public_ip2.vpn_gw.id
+      private_ip_address_allocation = "Dynamic"
+      subnet_id                     = azurerm_subnet.vpn_gw.id
+    }
+
+
 
 # Adding support for Internal VPN - for example IPSec tunnel over Express Route
     private_ip_address_enabled    = true
