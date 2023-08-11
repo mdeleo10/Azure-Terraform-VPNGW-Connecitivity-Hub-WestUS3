@@ -76,6 +76,8 @@ terraform {
 
 # Adding support for Internal VPN - for example IPSec tunnel over Express Route
     private_ip_address_enabled    = true
+
+}
   
 # Create and define Local Network Gateway for Site-to-Site connection with BGP to external IP address
 resource "azurerm_local_network_gateway" "remote_net" {
