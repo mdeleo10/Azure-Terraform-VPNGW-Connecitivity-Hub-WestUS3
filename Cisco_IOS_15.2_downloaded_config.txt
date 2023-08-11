@@ -1,7 +1,7 @@
 ! This is an example of another IPSec over VLANs (simulating ExpressRoute)
 !
 ! Last configuration change at 14:09:04 UTC Thu Aug 10 2023 by mdeleo
-
+! Note: Cisco CRS-1000v supports Dual Stack IPSec tunnels to Azure also
 !
 !
 crypto ikev2 proposal Azure-Ikev2-Proposal 

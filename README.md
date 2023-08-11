@@ -24,7 +24,7 @@ It has the following variables defined in the file variables.rf
 - private_ip_address_enabled is set to true, this allows  visiblity the internal IP address to deploy IPSec tunnel over Express Route (or demo vnets)
 
 TBD:
-Guthub is setup for a workflow to to run Actions upon code change (push) and deploy/redploy as needed. Check your .github/workflows folder to see it if needed
+Guthub is setup for a workflow to to run Actions upon code change (push). It will deploy/redeploy as needed. Check the .github/workflows folder to see it if needed.
 
 ## Prerequistes:
 
