@@ -65,7 +65,7 @@ terraform {
   
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
-    zones             = ["2"]
+    zones             = ["1"]
   }
 
 # Create VPN GW
@@ -82,7 +82,7 @@ terraform {
   # sku = "standard" for non-internal IPSec tunnel
     sku           = "VpnGw2AZ"
  #   sku            = "Standard"
-    zones           = ["1","2"]
+    zones           = ["1"]
 
     ip_configuration {
       name                          = "vnetGatewayConfig"
