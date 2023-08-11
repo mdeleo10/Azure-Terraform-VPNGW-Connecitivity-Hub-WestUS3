@@ -47,9 +47,11 @@ terraform {
     name                = "pip-vpn-gw-${azurerm_resource_group.rg.location}"
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
-    allocation_method = "Dynamic"
+#    allocation_method = "Dynamic"
+    allocation_method = "Static"
+  
     # Standard SKU for Internal IPSec tunnel
-  #  sku               = "Standard"
+    sku               = "Standard"
   }
   
 # Create VPN GW
