@@ -53,6 +53,7 @@ terraform {
     # Standard SKU for Internal IPSec tunnel
     sku               = "Standard"
   }
+
   
 # Create VPN GW
   resource "azurerm_virtual_network_gateway" "vpn_gw" {
