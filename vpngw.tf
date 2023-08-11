@@ -68,7 +68,6 @@ terraform {
     availability_zone   = "Zone-Redundant"
   }
 
-
 # Create VPN GW
   resource "azurerm_virtual_network_gateway" "vpn_gw" {
     name                = "vpn-gw-${var.resource_group_location}"
