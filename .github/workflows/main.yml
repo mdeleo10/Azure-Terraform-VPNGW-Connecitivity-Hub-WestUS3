@@ -71,14 +71,14 @@ jobs:
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
 
 # Install the preferred version of Terraform CLI 
 - name: Setup Terraform
   uses: hashicorp/setup-terraform@v2
   with:
-    terraform_version: 1.4.5
+    terraform_version: 1.11.2
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     # - name: Setup Terraform
