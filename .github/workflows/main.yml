@@ -82,7 +82,7 @@ jobs:
  - name: Setup Terraform
    uses: hashicorp/setup-terraform@v1
    with:
-     terraform_version: 1.1.7
+     terraform_version: 1.12.1
     
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     # - name: Setup Terraform
