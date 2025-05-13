@@ -10,12 +10,12 @@ variable "resource_group_location" {
 }
 
 variable "vnet_address_space" {
-  default       = "10.113.0.0/16,172.16.0.0/12,2001:db8:abc0::/48"
+  default       = ["10.113.0.0/16","172.16.0.0/12","2001:db8:abc0::/48"]
   description   = "Vnet Address Space"
 }
 
 variable "vpn_gw_GatewaySubnet_address"  {
-  default       = "10.113.3.0/24,2001:db8:abc0::/64"
+  default       = ["10.113.3.0/24","2001:db8:abc0::/64"]
   description   = "VPN GW Subnet Address Space"
 }
 
