@@ -19,6 +19,7 @@ variable "vpn_gw_GatewaySubnet_address"  {
   description   = "VPN GW Subnet Address Space"
 }
 
+
 variable "vpn_gw_vpn_client_configuration_address_space"  {
   default       = "10.114.2.0/24"
   description   = "VPN GW Client P2S Subnet Address Space"
