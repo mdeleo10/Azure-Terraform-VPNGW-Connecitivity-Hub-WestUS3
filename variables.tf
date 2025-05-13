@@ -10,7 +10,7 @@ variable "resource_group_location" {
 }
 
 variable "vnet_address_space" {
-  default       = "10.113.0.0/16,"172.16.0.0/12,2001:db8:abc0::/48"
+  default       = "10.113.0.0/16, 172.16.0.0/12,2001:db8:abc0::/48"
   description   = "Vnet Address Space"
 }
 
