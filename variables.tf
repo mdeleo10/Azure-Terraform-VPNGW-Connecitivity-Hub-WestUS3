@@ -25,12 +25,12 @@ variable "vpn_gw_vpn_client_configuration_address_space"  {
 }
 
 variable remote_gateway_address {
-  default       = "73.138.235.109"  
+  default       = "76.108.36.81"  
   description   = "Remote IPv4 address external peering"
 }
 
 variable remote_gateway_address_space {
-  default       = "192.168.0.0/16"  
+  default       = "192.168.0.0/16, 2601:58A:8700:1560::/60"  
   description   = "Remote IPv4 address space"
 }
 
