@@ -131,3 +131,4 @@ resource "azurerm_virtual_network_gateway_connection" "remote_connection" {
     enable_bgp                 = true
 }
 
+
