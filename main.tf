@@ -130,3 +130,4 @@ resource "azurerm_virtual_network_gateway_connection" "remote_connection" {
     shared_key                 = "${var.home_connection_shared_key}"
     enable_bgp                 = true
 }
+
